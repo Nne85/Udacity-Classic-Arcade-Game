@@ -1,9 +1,10 @@
+
 // Enemies our player must avoid
 var Enemy = function(x,y,velocity) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 this.x = x;
-this.y =y;
+this.y = y;
 this.velocity = velocity;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -16,11 +17,11 @@ this.velocity = velocity;
 Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x += (dt * this.velocity);
+    this.x +=  this.velocity * dt;
     // You should multiply any movement by the dt parameter
-    if (this.x > 500) {
-    this.x = -60;
-    this.velocity = 100 + Math.floor(Math.random() * 220);
+    if (this.x > 510) {
+    this.x = -50;
+    this.velocity =  100 + Math.floor(Math.random() * 222);
 
     };
     
@@ -45,8 +46,8 @@ Enemy.prototype.render = function() {
 var Player = function(x,y){
 this.x = x;
 this.y = y;
-//set the image to a pink girl
-this.player = 'images/char-horn-girl.png';
+//set the image to a boy
+this.player = 'images/char-boy.png';
 }
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -55,11 +56,11 @@ Player.prototype.update = function(dt) {
 
 };
 
-
+// here the image comes into the game
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.player), this.x, this.y);
 };
-
+// here the user uses the keyboard to change positions
 Player.prototype.handleInput = function (keyPress) {
 
  if (keyPress == 'left' && this.x > 0) {
@@ -80,23 +81,18 @@ Player.prototype.handleInput = function (keyPress) {
 
     if (this.y < 0) {
         setTimeout(() => {
-            this.x = 200;
-            this.y = 400;
+            this.x = 202;
+            this.y = 405;
         }, 800);
     };
 };
 
-var allEnemies = [new Enemy(-100, 145),
-    new Enemy(-100, 145),
-    new Enemy(-350, 62),
-    new Enemy(-100, 62),
-    new Enemy(-10, 230),
-    new Enemy(-100, 230)];
+var allEnemies = [];
 
 // Location of the 3 enemies on the y axis located on the stone road
-var Window.location = [63, 147, 230];
+var enemyStatus = [63, 147, 230];
 
-Window.location.forEach(function (locationY) {
+enemyStatus.forEach(function (locationY) {
     enemy = new Enemy(0, locationY, 200);
     allEnemies.push(enemy);
 });
