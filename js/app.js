@@ -94,9 +94,9 @@ var allEnemies = [new Enemy(-100, 145),
     new Enemy(-100, 230)];
 
 // Location of the 3 enemies on the y axis located on the stone road
-var location = [63, 147, 230];
+var Window.location = [63, 147, 230];
 
-location.forEach(function (locationY) {
+Window.location.forEach(function (locationY) {
     enemy = new Enemy(0, locationY, 200);
     allEnemies.push(enemy);
 });
