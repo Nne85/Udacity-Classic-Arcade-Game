@@ -16,15 +16,16 @@ this.velocity = velocity;
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
-    // all computers.
+    // all computers. 
+     // You should multiply any movement by the dt parameter
     this.x +=  this.velocity * dt;
-    // You should multiply any movement by the dt parameter
+   // check for the area of the enemy will emerge from
     if (this.x > 510) {
     this.x = -50;
     this.velocity =  100 + Math.floor(Math.random() * 222);
 
     };
-    
+    // check for player(boy)  angle of distance
     if (player.x < this.x + 80 &&
         player.x + 80 > this.x &&
         player.y < this.y + 60 &&
@@ -35,6 +36,7 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
+// this brings the enemy in and they come into the stage
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -60,7 +62,7 @@ Player.prototype.update = function(dt) {
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.player), this.x, this.y);
 };
-// here the user uses the keyboard to change positions
+// here the user uses the keyboard to change positions either up down or left and right
 Player.prototype.handleInput = function (keyPress) {
 
  if (keyPress == 'left' && this.x > 0) {
