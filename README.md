@@ -7,14 +7,12 @@ For detailed instructions on how to get started, check out this [guide](https://
 
 ## How to Play:
 The goal is to match is to jump into the water. 
-Click in the following link to play: 
-https://nne85.github.io/Udacity-Classic-Arcade-Game/.
-
-1. Using the arrow keys on your keyboard, move upwards.
-
-2. Try and avoid the cockroaches and try and jump into the water.
-
-3. If you made it in the water, you can play again. If you collided with a cockroach, starts again! 
+- You can open and play the game in most of web browsers
+- Use keyboard to manipulate the player's movement.
+- First, press the "start" button and choose your favorite character as the player.
+- You need to move to the road to get the gem in order to scoring.
+- You need to avoid collide with bugs or step into water otherwise you will lose one life.
+- You only have 4 life chances in total, game will be over after you use out them, good luck!
 
 
 ## Tools Used: 
